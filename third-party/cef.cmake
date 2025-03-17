@@ -22,7 +22,7 @@ if (NOT BUILD_IS_64BIT)
     return()
 endif ()
 
-set(CEF_VERSION "132.3.1+g144febe+chromium-132.0.6834.83")
+set(CEF_VERSION "134.3.0+g2830d3a+chromium-134.0.6998.44")
 set(CEF_DOWNLOAD_ROOT "${CMAKE_BINARY_DIR}/_cef")
 set(CEF_BINARY_OUT_DIR "${BUILD_OUT_ROOT}/libexec/cef")
 set(CEF_RESOURCE_OUT_DIR "${BUILD_OUT_ROOT}/libexec/cef")
@@ -31,7 +31,7 @@ include(ok_add_license_file)
 ok_add_license_file(cef/LICENSE.txt LICENSE-ThirdParty-CEF.txt)
 
 include(cef/DownloadCEF.cmake)
-DownloadCEF("windows64" "${CEF_VERSION}" "${CEF_DOWNLOAD_ROOT}")
+DownloadCEF("linux64" "${CEF_VERSION}" "${CEF_DOWNLOAD_ROOT}")
 message(STATUS "Downloaded Chromium Embedded Framework (CEF) to ${CEF_ROOT}")
 
 list(APPEND CMAKE_MODULE_PATH "${CEF_ROOT}/cmake")
